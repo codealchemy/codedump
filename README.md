@@ -1,4 +1,4 @@
 codedump
 ========
 
-Code ideas for playing with Liquid
+Tips and tricks for working with Liquid
