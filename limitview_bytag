@@ -1,0 +1,17 @@
+{% if request.current_signup.tags contains "Gold Member" %}
+
+ 
+
+<div id="content">
+
+  <div id="intro" class="intro">
+    <div class="text­content">
+      {{ page.basic.content }}
+    </div>
+  </div>
+
+  {% else %}
+
+To view this data, please sign up for Gold Member access.
+
+{% endif %}
