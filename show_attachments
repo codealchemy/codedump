@@ -1,0 +1,7 @@
+{% for attachment in page.attachments %}
+
+<a href="{{ attachment.url }}"><img src="{{ attachment.url }}"
+
+width="200" height="200"></a>
+
+{% endfor %}
