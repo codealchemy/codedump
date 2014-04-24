@@ -1,0 +1,16 @@
+{% for event in page.calendar.events_upcoming limit:1 offset:0 %}
+  {% include "event" %}
+{% endfor %}
+
+ 
+
+{% if page.calendar.events_upcoming_count < 1 %}
+  We are scheduling the next series of events. Check back soon, or <a href="/calendar">host your own!</a>
+{% endif %}
+
+
+Include the following code on the page level template you want the closest
+upcoming event to be displayed on
+
+<h3><a href="/calendar">Upcoming Events</a></h3>
+  <div id="eventContainer"> {% subpage "calendar" with "event_latest" %}</div>
