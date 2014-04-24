@@ -1,0 +1,12 @@
+Hi, you entered your name as: <b>{{ request.current_signup.name_or_email }}</b>.
+If that's not your preferred name, click here to change it: 
+
+{% if page_type == 'User Settings' %}
+
+<a href="{{ request.current_signup.settings_url }}"> edit my profile.</a>
+
+{% else %}
+
+<a href="{{ request.current_signup.settings_url }}"> edit my profile.</a>
+
+{% endif %}
