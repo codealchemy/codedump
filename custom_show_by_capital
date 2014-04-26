@@ -1,0 +1,19 @@
+{% include "breadcrumbs" %}
+
+{% if page.headline.size > 0 %}
+<h2 class="headline">{{ page.headline }}</h2>
+{% endif %}
+
+<div id="content">
+
+  <div id="intro" class="intro">
+    <div class="text-content">
+      
+      {% if request.current_signup.capital_amount_in_cents > 1000000 %} <!-- Pulls current sessions pc in cents -->
+      			<div>Show this content</div>
+      {% else %}
+     				 {{ page.basic.content }} <!-- This is what displays with pc under amount -->
+      {% endif %}
+      
+    </div>
+  </div>
