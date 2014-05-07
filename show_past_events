@@ -1,0 +1,3 @@
+ {% include "past_events" %}
+ 
+ <!-- Not functional across all nations -->
