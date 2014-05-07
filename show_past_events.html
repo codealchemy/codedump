@@ -1,0 +1,17 @@
+ <!-- The following should be placed in a seperate file saved under "files" section of a custom theme templates -->
+  <!-- File name should have a leading "_" and end in "html" - example _past_events.html -->
+  
+   <div class="padtop">
+  {% for event in page.calendar.events_past %}
+ 	 {% include "event" %} <!-- Pulls in info for each past event from the calendar -->
+      <hr>
+		{% endfor %}
+</div>
+
+ <div class="padtop padbottom">
+	    {{ page.calendar.events_past | paginate }} <!-- displays past events in a list and then paginates overflow -->
+	</div>
+ 
+ <!-- This is the bit that you could paste into the template html for which you would like to add the feature, for the example above, a paginated list of past events -->
+ 
+ {% include "past_events" %}
