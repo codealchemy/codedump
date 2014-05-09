@@ -16,31 +16,3 @@
  
  {% include "past_events" %}
 
---------------------------------------------------
-<!-- Likewise, the code below is for pulling the past events onto another page -->
-<!-- First, the seperate file saved in the files section of a custom theme template -->
-
-<div class="padtop" style="width: 80%; margin: auto;">
-  {% for event in page.calendar.events_past %}
- 	 {% include "event" %}
-  {% if event.has_image? %}
-  	
-  {% endif %}
-  		<br>
-      <hr>
-		{% endfor %}
-</div>
-
-
-{% if page.calendar.events_past_count > 0 %}
-
-<div class="padtop padbottom">
-    {{ page.calendar.events_past | paginate }} <br>
-	</div>
-
-{% endif %}
-
-
-<!-- Now the code to actually embed it into a page -->
-
-  {% subpage "events" with "past_e_page2" %} <!-- "past_e_page2" would be the name of the file created in the above secion -->
