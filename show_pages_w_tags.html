@@ -1,0 +1,19 @@
+<!-- Create a snippet (ex. _page_tags.html) with the following -->
+
+{% for post in tag.most_recent_published_pages limit: 5 %}
+  <div style="font-weight: bold; font-size: 16px;">
+     <a href="{{ post.url }}">{{ post.headline }}</a> <!-- Will pull the headline of the page -->
+  </div>
+  <div class="byline">{{ post.published_at | date: '%b %d, %Y' }}</div> <!-- Will pull and show the date that the page was published at -->
+  <div class="blog_teaser">{{ post.blog_post.content }}</div>
+  <div class="continue_reading">
+      <a href="{{ post.url }}">Read more</a> → <!-- Will show "read more" with a link to the page -->
+  </div> 
+  <hr />{% endfor %}
+  
+  
+  =======================
+  
+<!-- Drop this liquid into whichever page you would like the list of tagged pages to appear -->
+
+{% tag "[insert page tag here]" with "page_tags" %}
