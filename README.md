@@ -1,7 +1,7 @@
-codedump
+Code Dump
 ========
 
-Tips and tricks for working with Liquid
+Tips and tricks for working with Liquid, Javascript, HTML, SASS, and unicorn horns
 
 Many examples here are found in NationBuilder support as well:
 http://nationbuilder.com/liquid_basics
