@@ -1,0 +1,28 @@
+<!-- First create the snippet _YOURTEXTHERE.html -->
+
+{% for post in page.blog.most_recent_blog_posts }
+  { if post.tags_count &gt; 0 }
+    { for tag in post.tags }
+      <span class=“page-tag”><a href=“%7B%7B%20tag.url%20%7D%7D”>{{ tag.name }}</a></span>
+    { endfor }
+  { endif }
+{ endfor %} 
+
+
+<!-- Now the Javascript to remove out duplicate tags -->
+
+var used = {};
+  $(‘.page-tag’).each(function(){
+  var id = $(this).attr(“data-id”);
+    if (used[id]) {
+    $(this).remove();
+    } 
+    else {
+    used[id] = true;
+    }
+}); 
+
+
+<!-- Then the code to drop the snippet on the page -->
+
+{% subpage blog with “blog_latest” %} 
