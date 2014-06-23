@@ -1,0 +1,19 @@
+{% assign tag1 = false %}
+{% assign tag2 = false %}
+
+{% for tag in page.tags %}
+  {% if tag.name == 'tag1' %}
+    {% assign tag1 = true %}
+  {% endif %}
+  {% if tag.name == 'tag2' %}
+    {% assign tag2 = true %}
+  {% endif %}
+{% endfor %}
+  
+{% if tag1 %}
+  <h2 class="action-headline tag1">Something tag1 something</h2>  
+{% endif %}
+  
+{% if tag2 %}
+  <h2 class="action-headline tag2">Something something tag2</h2>  
+{% endif %}
