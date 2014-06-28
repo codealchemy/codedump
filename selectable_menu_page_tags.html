@@ -1,6 +1,7 @@
 {% if page.tags_count > 1 %}
 	<select id="menu1"> <!-- the "menu1" is arbitrary, used for the script below -->
-    {% for tag in page.tags %}
+	{% assign taggies = page.tags | sort: 'name' %}
+    {% for tag in taggies %}
     <option value="/tags/{{tag.slug }}">{{ tag.name }}</option> <!-- Pulls tag name and links it to its related page -->
     {% endfor %}
 	</select>
@@ -13,3 +14,13 @@
       window.open( this.options[ this.selectedIndex ].value );
  };
 </script>
+
+{% assign subpages = page.nav_children | sort: 'headline'%}
+
+<ul>
+{% for subpage in subpages %}
+  <li>
+    <a href="{{ subpage.url }}">{{ subpage.headline }}</a>
+  </li>
+{% endfor %}
+</ul>
