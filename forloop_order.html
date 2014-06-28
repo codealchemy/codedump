@@ -1,0 +1,9 @@
+{% assign subpages = page.nav_children | sort: 'headline'%}
+
+<ul>
+{% for subpage in subpages %}
+  <li>
+    <a href="{{ subpage.url }}">{{ subpage.headline }}</a>
+  </li>
+{% endfor %}
+</ul>
