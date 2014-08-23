@@ -5,18 +5,15 @@
 {% endif %}
 
 <div id="content">
-
   <div id="intro" class="intro">
     <div class="text-content">
-      
-            {% if request.current_signup.capital_amount_in_cents < 10000 %}
-      	    		<div>You have less than 100 pc</div>
-            {% elsif 200000 >= request.current_signup.capital_amount_in_cents >= 10000 %}
-      	    		<div>You have between 100 and 2000 pc</div>
-            {% elsif  request.current_signup.capital_amount_in_cents > 200000 %}
-      			    <div>You have over 2000 pc</div>
-     				   {{ page.basic.content }}
-            {% endif %}
-      
+      {% if request.current_signup.capital_amount_in_cents < 10000 %}
+	    		<div>You have less than 100 pc</div>
+      {% elsif 200000 >= request.current_signup.capital_amount_in_cents >= 10000 %}
+	    		<div>You have between 100 and 2000 pc</div>
+      {% elsif  request.current_signup.capital_amount_in_cents > 200000 %}
+			    <div>You have over 2000 pc</div>
+ 			   {{ page.basic.content }}
+      {% endif %}
     </div>
   </div>
