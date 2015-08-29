@@ -2,8 +2,13 @@
 <!-- Add line 8 to the page template (the rest is here for context of where in the page) -->
 <!-- Also note that the organization name is kept in the 'last name' field for a signup -->
 
-      {% if request.sorta_logged_in? == false or request.current_signup.has_name? == false %}
-        <div class="row-fluid">
-          <div class="span12"><label for="signup_last_name">Org Name</label>{% text_field "last_name", class:"text" %}</div>
-          <div style="display: none"><label for="signup_signup_type">Type</label>{% text_field "signup_type", value:"1" %}</div>
-        {% endif %}
+{% if request.sorta_logged_in? == false or request.current_signup.has_name? == false %}
+  <div class="row-fluid">
+    <div class="span12">
+      <label for="signup_last_name">Org Name</label>{% text_field "last_name", class:"text" %}
+    </div>
+    <div style="display: none">
+      <label for="signup_signup_type">Type</label>{% text_field "signup_type", value:"1" %}
+    </div>
+  </div>
+{% endif %}
